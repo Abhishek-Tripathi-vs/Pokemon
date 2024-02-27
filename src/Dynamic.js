@@ -33,6 +33,7 @@ const Dynamic = () => {
       ))}
     </div>
   );
+
 };
 
 export default Dynamic;

@@ -41,7 +41,7 @@ const SearchBox = () => {
 
       <div className="cart-container">
         {Data.map((item, index) => (
-          <Link to={"/dynamic:" + item.id} key={index}>
+          <Link to={"/dynamic/" + item.id} key={index}>
             <Cart {...item} />
           </Link>
         ))}
