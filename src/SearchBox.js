@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import usehandleSearchText from "./usehandleSearchText";
 import Cart from "./Cart";
+import { Link } from "react-router-dom";
+import "./SearchBox.css"; // Import the CSS file
 
 async function GetItems(SearchText, SetData) {
   const res = await fetch(
@@ -10,7 +12,6 @@ async function GetItems(SearchText, SetData) {
   );
   const data = await res.json();
   SetData(data.results);
-  console.log(data);
 }
 
 const SearchBox = () => {
@@ -23,12 +24,14 @@ const SearchBox = () => {
   }, [Search]);
 
   return (
-    <div>
+    <div className="search-container">
       <input
         type="text"
+        className="search-input"
         onChange={(e) => usehandleSearchText(e, SetSearchText)}
       />
       <button
+        className="search-button"
         onClick={() => {
           SetSearch(Search + 1);
         }}
@@ -36,9 +39,13 @@ const SearchBox = () => {
         Search
       </button>
 
-      {Data.map((item, index) => (
-        <Cart key={index} {...item} />
-      ))}
+      <div className="cart-container">
+        {Data.map((item, index) => (
+          <Link to={"/dynamic:" + item.id} key={index}>
+            <Cart {...item} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

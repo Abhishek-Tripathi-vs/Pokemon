@@ -1,0 +1,31 @@
+/* Dynamic component CSS */
+.dynamic-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .dynamic-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .dynamic-instructions {
+    margin-bottom: 20px;
+  }
+  
+  .dynamic-step {
+    margin-bottom: 10px;
+  }
+  
+  .dynamic-step-number {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .dynamic-step-description {
+    font-size: 16px;
+  }
+  
+  
